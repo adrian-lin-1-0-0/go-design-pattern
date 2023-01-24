@@ -19,7 +19,7 @@ func (s *Subscriber) Pub(m *Msg) {
 	s.Channel <- m
 }
 
-func (s *Subscriber) NewHandler(f func(m *Msg)) {
+func (s *Subscriber) SetHandler(f func(m *Msg)) {
 	go func() {
 		for {
 			select {

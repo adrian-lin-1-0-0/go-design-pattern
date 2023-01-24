@@ -24,8 +24,8 @@ func TestObserver(t *testing.T) {
 
 	handler1 := getHandler(str1)
 
-	subscriber1.NewHandler(handler1)
-	subscriber2.NewHandler(handler1)
+	subscriber1.SetHandler(handler1)
+	subscriber2.SetHandler(handler1)
 
 	topic1 := NewTopic("topic1")
 	topic1.Register(subscriber1)
