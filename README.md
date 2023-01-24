@@ -1,4 +1,4 @@
-# Study Note - Design Pattern
+# Design Pattern
 
 ### Unit Test
 
