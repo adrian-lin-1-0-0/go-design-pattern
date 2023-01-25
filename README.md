@@ -13,6 +13,7 @@ make test
 - [Prototype](https://github.com/adrian-lin-1-0-0/go-design-pattern/tree/master/prototype)
 - [Singleton](https://github.com/adrian-lin-1-0-0/go-design-pattern/tree/master/singleton)
 - [Simple Factory](https://github.com/adrian-lin-1-0-0/go-design-pattern/tree/master/simple_factory)
+- [Object Pool](https://github.com/adrian-lin-1-0-0/go-design-pattern/tree/master/object_pool)
 
 ## Structural Patterns
 - [Adapter](https://github.com/adrian-lin-1-0-0/go-design-pattern/tree/master/adapter)
