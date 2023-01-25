@@ -21,12 +21,8 @@ func (s *Subscriber) Pub(m *Msg) {
 
 func (s *Subscriber) SetHandler(f func(m *Msg)) {
 	go func() {
-		for {
-			select {
-			case m := <-s.Channel:
-				f(m)
-			}
-
+		for m := range s.Channel {
+			f(m)
 		}
 	}()
 }
