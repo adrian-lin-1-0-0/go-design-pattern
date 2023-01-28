@@ -37,10 +37,6 @@ func (c *Cache) add(key, value string) string {
 	return algo
 }
 
-func (c *Cache) get(key string) {
-	delete(c.storage, key)
-}
-
 func (c *Cache) evict() string {
 	algo := c.algo.evict(c)
 	c.capacity--
