@@ -23,3 +23,4 @@ make test
 
 ## Behavioral Patterns
 - [Observer](https://github.com/adrian-lin-1-0-0/go-design-pattern/tree/master/observer)
+- [Strategy](https://github.com/adrian-lin-1-0-0/go-design-pattern/tree/master/strategy)
