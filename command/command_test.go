@@ -4,10 +4,6 @@ import "testing"
 
 func TestPlugButton(t *testing.T) {
 	plug := &Plug{}
-	onCommand := &OnCommand{device: plug}
-	onButton := &Button{command: onCommand}
-	offCommand := &OffCommand{device: plug}
-	offButton := &Button{command: offCommand}
 
 	type fields struct {
 		command func()
@@ -20,10 +16,10 @@ func TestPlugButton(t *testing.T) {
 		want   bool
 	}{
 		{name: "Test Plug On", fields: fields{
-			command: onButton.Press,
+			command: (&Button{command: &OnCommand{device: plug}}).Press,
 			status:  plug.IsRunning}, want: true},
 		{name: "Test Plug Off", fields: fields{
-			command: offButton.Press,
+			command: (&Button{command: &OffCommand{device: plug}}).Press,
 			status:  plug.IsRunning}, want: false},
 	}
 
@@ -33,7 +29,6 @@ func TestPlugButton(t *testing.T) {
 			got := tt.fields.status()
 			if got != tt.want {
 				t.Errorf("Button.Press() got = %v, want %v", got, tt.want)
-
 			}
 		})
 	}
