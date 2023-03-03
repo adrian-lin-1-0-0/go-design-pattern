@@ -25,3 +25,4 @@ make test
 - [Observer](https://github.com/adrian-lin-1-0-0/go-design-pattern/tree/master/observer)
 - [Strategy](https://github.com/adrian-lin-1-0-0/go-design-pattern/tree/master/strategy)
 - [Command](https://github.com/adrian-lin-1-0-0/go-design-pattern/tree/master/command)
+- [Chain of Responsibility](https://github.com/adrian-lin-1-0-0/go-design-pattern/tree/master/chain_of_responsibility)
