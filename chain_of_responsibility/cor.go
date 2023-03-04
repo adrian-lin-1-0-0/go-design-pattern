@@ -15,8 +15,10 @@ type Middleware struct {
 func (m *Middleware) Use(handle func(msg string, next Next)) {
 
 	messageHandler := &MessageHandler{
-		handler: func(msg string) { handle(msg, m.next) },
+		next: &MessageHandler{handler: func(message string) {}},
 	}
+
+	messageHandler.handler = func(msg string) { handle(msg, messageHandler.next.handler) }
 
 	if m.head == nil {
 		m.head = messageHandler
@@ -24,17 +26,6 @@ func (m *Middleware) Use(handle func(msg string, next Next)) {
 	} else {
 		m.tail.next = messageHandler
 		m.tail = m.tail.next
-	}
-}
-
-func (m *Middleware) next(msg string) {
-	if m.head == nil {
-		return
-	}
-
-	m.head = m.head.next
-	if m.head != nil {
-		m.head.handler(msg)
 	}
 
 }
